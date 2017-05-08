@@ -1,0 +1,54 @@
+head{
+    background-color:rosybrown;
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
+}
+
+body{
+    background-color: rosybrown;
+}
+ 
+#contenedor {
+    width: 600;
+    height: 600px;
+}
+
+    
+#cabecera{
+    font-size:50px;
+    color: black;
+    height: 20px;
+    font-family: 'Rationale', sans-serif;
+}
+#centrar{
+    
+    
+}
+
+#titulo2,#Formacion {
+    font-size: 40px;
+    font-family: 'Rationale', sans-serif;
+}
+
+
+#menu {
+  float: left;
+  width: 450px;
+}
+
+#contenido {
+    background-color: antiquewhite;
+    float: right;
+    font-size: 10px;
+    width:100%;
+    height:100%;
+}
+
+#pie {
+    clear: both;
+    height: 30px;
+    padding-top: 30px;
+}
