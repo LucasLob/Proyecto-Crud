@@ -54,8 +54,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("  <head>\n");
       out.write("      <div id=\"cabecera\">\n");
-      out.write("      <h3 id = \"titulo\" align=\"center\" >Gestión de modems <img src=\"icon.png\" alt=\"Modem\" style=\"width:100px;height:100px;\"></h3>\n");
+      out.write("          <h3 id = \"titulo\" align=\"center\" >Gestión de modems <br> <img src=\"icon.png\" alt=\"Modem\" style=\"width:100px;height:100px;\"></h3>\n");
       out.write("      </div>\n");
+      out.write("  <hr>\n");
+      out.write("  <hr>\n");
       out.write("      <!-- Carga del favicon y estilos -->\n");
       out.write("      <link rel=\"icon\" href=\"favicon.ico\" type=\"image/gif\" sizes=\"16x16\">\n");
       out.write("      <link rel=\"stylesheet\" href=\"misestilos.css\">\n");
@@ -70,8 +72,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  </head>\n");
       out.write("\n");
       out.write("  <hr>\n");
-      out.write("  <body id = \"cuerpo\">\n");
-      out.write("  <div id=\"contenedor\">\n");
+      out.write("  <body id=\"cuerpo\">\n");
       out.write("  <br><br>\n");
       out.write("        ");
 
@@ -85,14 +86,23 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <div id=\"contenido\">\n");
       out.write("        <table class=\"table table-striped\">\n");
-      out.write("            <tr><th>ID Modem</th><th>Marca</th><th>Modelo</th><th>Color</th><th>Nº Puertos</th><th></th><th></th></tr>\n");
+      out.write("        <tr><th style=\"text-align:right\">ID Modem</th>\n");
+      out.write("            <th style=\"text-align:right\">Marca</th>\n");
+      out.write("            <th style=\"text-align:right\">Modelo</th>\n");
+      out.write("            <th style=\"text-align:right\">Color</th>\n");
+      out.write("            <th style=\"text-align:right\">Nº Puertos</th>\n");
+      out.write("            <th></th>\n");
+      out.write("            <th></th>\n");
+      out.write("        </tr>\n");
       out.write("        <form method=\"get\" action=\"grabaModem.jsp\">\n");
-      out.write("              <tr><td><input type=\"text\" name=\"id\" size=\"4\"></td>\n");
+      out.write("              <tr>\n");
+      out.write("              <td><input type=\"text\" name=\"id\" size=\"4\"></td>\n");
       out.write("              <td><input type=\"text\" name=\"marca\" size=\"10\"></td>\n");
       out.write("              <td><input type=\"text\" name=\"modelo\" size=\"15\"></td>\n");
       out.write("              <td><input type=\"text\" name=\"color\" size=\"10\"></td>\n");
       out.write("              <td><input type=\"text\" name=\"n_puertos\" size=\"4\"></td>\n");
-      out.write("              <td><button type=\"submit\"  class=\"btn btn-info\"><span class=\"glyphicon glyphicon-ok\"></span> Guardar</button></tr>\n");
+      out.write("              <td><button type=\"submit\"  class=\"btn btn-info\"><span class=\"glyphicon glyphicon-ok\"></span> Guardar</button>\n");
+      out.write("              </tr>\n");
       out.write("        </form>\n");
       out.write("        ");
 
@@ -107,7 +117,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <td>\n");
       out.write("        <form method=\"get\" action=\"modificaModem.jsp\">\n");
-      out.write("\t\t\t\t\t<input type=\"hidden\" name=\"id\" value=\"");
+      out.write("\t  <input type=\"hidden\" name=\"id\" value=\"");
       out.print(listado.getString("id") );
       out.write("\">\n");
       out.write("          <input type=\"hidden\" name=\"marca\" value=\"");
@@ -133,6 +143,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <button type=\"submit\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-remove\"></span> Eliminar</button>\n");
       out.write("        </form>\n");
       out.write("        </td></tr>\n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("        ");
 
           } // while   
@@ -147,9 +159,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("         <hr>\n");
       out.write("      Realizado por Lucas Lobato Botelho 1º DAW  \n");
       out.write("    </div>\n");
-      out.write("    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n");
-      out.write("    <script src=\"js/jquery.min.js\"></script>\n");
-      out.write("    <script src=\"js/bootstrap.min.js\"></script>\n");
       out.write("  </body>\n");
       out.write("</html>");
     } catch (Throwable t) {

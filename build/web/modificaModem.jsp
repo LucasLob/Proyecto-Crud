@@ -2,6 +2,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <div id="cabecera">
+          <h3 id = "titulo" align="center" > Modificación de Modems <br><img src="icon.png" alt="Modem" style="width:100px;height:100px;"></h3>
+      </div>
+  <hr>
+  <hr>
+  <hr>
+  
     <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="misestilos.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,29 +24,40 @@
     <% request.setCharacterEncoding("UTF-8"); %>
     <div class="container">
       <br><br>
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center">Modificación de Modems</div>
-          <form method="get" action="grabaModem2.jsp">
-            <div class="form-group"> 
-              <label>&nbsp;&nbsp;ID:&nbsp;</label><input type="text" size="4" name="id" value="<%= request.getParameter("id") %>" readonly>
-            </div>
-            <div class="form-group">
-            <label>&nbsp;&nbsp;Marca:&nbsp;</label><input type="text" size="10" name="marca" value="<%= request.getParameter("marca") %>">
-            </div>
-            <div class="form-group">
-             <label>&nbsp;&nbsp;Modelo:&nbsp;</label><input type="text" size="15" name="modelo" value="<%= request.getParameter("modelo") %>">
-             <label>&nbsp;&nbsp;Color:&nbsp;</label><input type="text" size="10" name="color" value="<%= request.getParameter("color") %>">
-            </div>
-            <div class="form-group">
-             <label>&nbsp;&nbsp;Nº Puertos:&nbsp;</label><input type="text" name="n_puertos" size="4" value="<%= request.getParameter("n_puertos") %>">
-            </div>
-            <hr>
-            &nbsp;&nbsp;<a href="index.jsp" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
-            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Aceptar</button><br><br>
-          </form>
+<table class="table table-striped">
+<form method="get" action="grabaModem2.jsp">
+      <tr>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <th colspan="2"><input type="text" size="4" name="id" value="<%= request.getParameter("id") %>" readonly></th>
+      </tr>
+      <tr>
+        <td >Marca</td>
+            <th colspan="2"><input type="text" size="10" name="marca" value="<%= request.getParameter("marca") %>"></th>
+      </tr>
+      <tr>
+        <td>Modelo</td>
+            <th colspan="2"><input type="text" size="15" name="modelo" value="<%= request.getParameter("modelo") %>"></th>
+      </tr>
+        <tr>
+        <td>Color</td>
+            <th colspan="2"><input type="text" size="10" name="color" value="<%= request.getParameter("color") %>"></th>
+      </tr>
+        <tr>
+        <td >Número de puertos</td>
+            <th colspan="3"><input type="text" name="n_puertos" size="4" value="<%= request.getParameter("n_puertos") %>"></th>
+      </tr>
 
-      </div>
-      <div class="text-center">&copy; 1º Desarrollo de Aplicaciones Web</div>
+      </tr>
+        <tr>
+        <td><a href="index.jsp" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+        </td>
+        <th colspan="2"><button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Aceptar</button></th>
+      </tr>
+    </form>
+</table>
+    <div class="text-center">&copy; 1º Desarrollo de Aplicaciones Web</div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

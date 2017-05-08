@@ -7,8 +7,10 @@
 <html>
   <head>
       <div id="cabecera">
-      <h3 id = "titulo" align="center" >Gestión de modems <img src="icon.png" alt="Modem" style="width:100px;height:100px;"></h3>
+          <h3 id = "titulo" align="center" >Gestión de modems <br> <img src="icon.png" alt="Modem" style="width:100px;height:100px;"></h3>
       </div>
+  <hr>
+  <hr>
       <!-- Carga del favicon y estilos -->
       <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
       <link rel="stylesheet" href="misestilos.css">
@@ -23,8 +25,7 @@
   </head>
 
   <hr>
-  <body id = "cuerpo">
-  <div id="contenedor">
+  <body id="cuerpo">
   <br><br>
         <%
           Class.forName("com.mysql.jdbc.Driver");
@@ -35,15 +36,24 @@
         %>
 
         <div id="contenido">
-        <table align="right" class="table table-striped">
-        <tr><th>ID Modem</th><th>Marca</th><th>Modelo</th><th>Color</th><th>Nº Puertos</th><th></th><th></th></tr>
+        <table class="table table-striped">
+        <tr><th style="text-align:right">ID Modem</th>
+            <th style="text-align:right">Marca</th>
+            <th style="text-align:right">Modelo</th>
+            <th style="text-align:right">Color</th>
+            <th style="text-align:right">Nº Puertos</th>
+            <th></th>
+            <th></th>
+        </tr>
         <form method="get" action="grabaModem.jsp">
-              <tr><td><input type="text" name="id" size="4"></td>
+              <tr>
+              <td><input type="text" name="id" size="4"></td>
               <td><input type="text" name="marca" size="10"></td>
               <td><input type="text" name="modelo" size="15"></td>
               <td><input type="text" name="color" size="10"></td>
               <td><input type="text" name="n_puertos" size="4"></td>
-              <td><button type="submit"  class="btn btn-info"><span class="glyphicon glyphicon-ok"></span> Guardar</button></tr>
+              <td><button type="submit"  class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Guardar</button>
+              </tr>
         </form>
         <%
           while (listado.next()) {
@@ -61,7 +71,7 @@
           <input type="hidden" name="modelo" value="<%=listado.getString("modelo") %>">
           <input type="hidden" name="color" value="<%=listado.getString("color") %>">
           <input type="hidden" name="n_puertos" value="<%=listado.getString("n_puertos") %>">
-	  <button type="submit"  class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>
+	  <button type="submit"  class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>
 	</form>
 	</td>
         <td>
@@ -70,6 +80,8 @@
           <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>
         </form>
         </td></tr>
+        
+        
         <%
           } // while   
 
@@ -82,8 +94,5 @@
          <hr>
       Realizado por Lucas Lobato Botelho 1º DAW  
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
